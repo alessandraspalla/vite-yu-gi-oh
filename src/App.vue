@@ -1,4 +1,6 @@
 <script>
+import { store } from './store.js'
+import axios from 'axios'
 import AppHeader from './components/AppHeader.vue'
 import ListCard from './components/ListCard.vue'
 
@@ -6,6 +8,25 @@ export default {
   components: {
     AppHeader,
     ListCard
+  },
+  data() {
+    return {
+      store
+    }
+  },
+  methods: {
+    getCard() {
+      axios.get(store.apiURL)
+        .then(res => {
+          store.cardList = res.data.data;
+        })
+        .catch(error => {
+          console.log(error);
+        })
+    }
+  },
+  created() {
+    this.getCard();
   }
 }
 </script>

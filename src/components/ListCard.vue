@@ -11,7 +11,7 @@ export default {
 
 <template>
     <div class="container">
-
+        <Card />
     </div>
 </template>
 
