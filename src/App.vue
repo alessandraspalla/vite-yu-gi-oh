@@ -1,9 +1,11 @@
 <script>
 import AppHeader from './components/AppHeader.vue'
+import ListCard from './components/ListCard.vue'
 
 export default {
   components: {
-    AppHeader
+    AppHeader,
+    ListCard
   }
 }
 </script>
@@ -11,7 +13,7 @@ export default {
 <template>
   <AppHeader />
   <main>
-
+    <ListCard />
   </main>
 </template>
 
@@ -22,5 +24,7 @@ export default {
 main {
   background-color: $primary_color;
   min-height: 90vh;
+  padding: 50px 0;
+  overflow: auto;
 }
 </style>
