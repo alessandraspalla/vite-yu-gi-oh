@@ -44,8 +44,6 @@ export default {
 
 main {
   background-color: $primary_color;
-  min-height: 90vh;
   padding: 50px 0;
-  overflow: auto;
 }
 </style>
