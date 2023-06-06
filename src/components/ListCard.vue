@@ -1,11 +1,13 @@
 <script>
 import { store } from './../store.js'
 import Card from './Card.vue'
+import AppCounter from './AppCounter.vue'
 
 export default {
     name: 'ListCard',
     components: {
-        Card
+        Card,
+        AppCounter
     },
     data() {
         return {
@@ -17,9 +19,7 @@ export default {
 
 <template>
     <div class="container">
-        <div class="counter-card">
-            Found 15 card
-        </div>
+        <AppCounter />
         <Card v-for="card in store.cardList" :details="card" />
     </div>
 </template>
@@ -36,16 +36,5 @@ export default {
     padding-top: 70px;
     padding-bottom: 25px;
     position: relative;
-
-    .counter-card {
-        height: 50px;
-        padding: 15px;
-        background-color: #000;
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        color: $white;
-    }
 }
 </style>
