@@ -4,12 +4,14 @@ import axios from 'axios'
 import AppLoader from './components/AppLoader.vue'
 import AppHeader from './components/AppHeader.vue'
 import ListCard from './components/ListCard.vue'
+import AppSearch from './components/AppSearch.vue'
 
 export default {
   components: {
     AppLoader,
     AppHeader,
-    ListCard
+    ListCard,
+    AppSearch
   },
   data() {
     return {
@@ -26,18 +28,28 @@ export default {
         .catch(error => {
           console.log(error);
         })
+    },
+    getArchetype() {
+      axios.get(store.apiArchetypeURL)
+        .then(result => {
+          let archetype = result.data
+          store.archetypeList = archetype;
+          console.log(store.archetypeList);
+        })
     }
   },
   created() {
     this.getCard();
+    this.getArchetype();
   }
 }
 </script>
 
 <template>
-  <AppLoader />
+  <AppLoader v-if="store.loading" />
   <AppHeader />
   <main>
+    <AppSearch @search="getCard" />
     <ListCard />
   </main>
 </template>

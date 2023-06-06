@@ -14,7 +14,8 @@ export default {
         </div>
         <div class="text">
             <h5>{{ details.name }}</h5>
-            <p>{{ details.archetype }}</p>
+            <p v-if="details.archetype">{{ details.archetype }}</p>
+            <p v-else>Other</p>
         </div>
     </div>
 </template>

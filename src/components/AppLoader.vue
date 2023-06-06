@@ -11,7 +11,7 @@ export default {
 </script>
 
 <template>
-    <div v-if="store.loading" id="loader">
+    <div id="loader">
         <div class="lds-ring">
             <div></div>
             <div></div>
