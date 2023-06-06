@@ -20,9 +20,16 @@ export default {
   },
   methods: {
     getCard() {
-      axios.get(store.apiURL)
+      let myURL = store.apiURL;
+
+      if (store.searchText !== '') {
+        myURL = `https://db.ygoprodeck.com/api/v7/cardinfo.php?${store.apiArchetypeParameter}=${store.searchText}`
+      }
+      console.log(myURL);
+      axios.get(myURL)
         .then(res => {
           store.cardList = res.data.data;
+
           store.loading = false;
         })
         .catch(error => {

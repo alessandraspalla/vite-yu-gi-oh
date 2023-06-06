@@ -6,5 +6,6 @@ export const store = reactive({
     loading: true,
     apiArchetypeURL: 'https://db.ygoprodeck.com/api/v7/archetypes.php',
     archetypeList: [],
-    searchText: ''
+    searchText: '',
+    apiArchetypeParameter: 'archetype'
 });
