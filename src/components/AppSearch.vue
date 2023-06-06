@@ -19,4 +19,10 @@ export default {
     </select>
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+select {
+    height: 35px;
+    padding: 5px;
+    margin: 20px 90px;
+}
+</style>
